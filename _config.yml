@@ -1,0 +1,10 @@
+# Site settings
+title: MXconda - neatly packed MX software
+tag_text: MXconda
+description: Installation of macromolecular crystallography software made easy.
+
+# Build settings
+markdown: kramdown
+exclude: ["README.md"]
+sass:
+  style: compressed

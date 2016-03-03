@@ -12,7 +12,7 @@ body {
 
 @media (min-width: 30rem) {
   body {
-    margin-top: 5rem;
+    margin-top: 4rem;
   }
 }
 
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Garamond', 'Georgia', serif;
   margin: 0 0 0.5rem -0.1rem /* align left edge */;
   line-height: 1;
-  color: #333;
+  color: #444;
   text-rendering: optimizeLegibility;
 }
 
@@ -125,7 +125,8 @@ td, th {
 
 pre, code {
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-  background-color: #ecf0f3;
+  background-color: #feb;
+  color: #544;
   font-size: 0.95rem;
 }
 

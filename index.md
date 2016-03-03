@@ -13,17 +13,16 @@ layout: default
 
 - built on top of [Anaconda Python](https://www.continuum.io/anaconda)
   and powered by its package manager
-  ([conda](http://conda.pydata.org/docs/))
+  [conda](http://conda.pydata.org/docs/)
 - for Linux and OS X, planned also for Windows
 - easy to install, even easier to remove: contained in a single directory
 - quick to update: let us use coot as an example - `mx update coot`
   will download only a 17MB package - coot itself, not all dependencies (100MB)
 - quick to downgrade: you may easily go back to the last release
   (`mx install coot==0.8.2`) or to older development snapshot
-  (`mx search coot` shows all available versions)
-- designed to avoid conflicts when the same programs are installed
-  also outside of mxconda
-- developer friendly and CI-server friendly (details [below](#libraries))
+- designed to avoid conflicts with the same programs installed
+  outside of mxconda
+- developer friendly and CI-server friendly ([-> Libraries](#libraries))
 
 ## Initial set of packages
 
@@ -54,19 +53,19 @@ Which brings us to...
 
 The `mx` script wraps all package operations (it just passes arguments to `conda`):
 
-    mx install coot
-    mx update coot
-    mx update --all
-    mx search coot
-    mx install coot==0.8.2
-    mx remove coot
-    mx info coot
-    mx clean --packages --tarballs
+    mx install coot         # install a package
+    mx update coot          # later on, update it
+    mx update --all         # or update everything
+    mx search coot          # see available versions
+    mx install coot==0.8.2  # and install older one
+    mx remove coot          # uninstall
+    mx clean -pt            # delete unused packages to save disk space
 
 The same script is used to start programs:
 
     mx coot
     mx pymol my.pdb
+    mx conda help
 
 and called without arguments, it starts bash subshell with all programs
 in the PATH:
@@ -129,4 +128,4 @@ using it to install mmdb, libccp4 and clipper libraries takes
 ## thoughts?
 
 email wojdyr@gmail.com
-
+or use [github issues](https://github.com/mxconda/mx/issues)

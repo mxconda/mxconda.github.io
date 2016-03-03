@@ -6,13 +6,13 @@ html {
 }
 
 body {
-  margin: 2rem 0 5rem;
+  margin: 2em 0 5em;
   color: #303338;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 30em) {
   body {
-    margin-top: 4rem;
+    margin-top: 4em;
   }
 }
 
@@ -27,22 +27,18 @@ a:hover, a:focus {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Garamond', 'Georgia', serif;
-  margin: 0 0 0.5rem -0.1rem /* align left edge */;
-  line-height: 1;
   color: #444;
-  text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.5em;
   text-align: center;
+  margin-bottom: 0;
 }
 
-@media (min-width: 30rem) {
+@media (min-width: 30em) {
   h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3em;
   }
 }
 
@@ -50,44 +46,43 @@ h1 a {
   color: inherit;
 }
 
-h2 {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 30rem) {
-  h2 {
-    margin-top: 2.5rem;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-}
-
-h3, h4, h5, h6 {
-  margin-top: 1.4rem;
-  font-size: 1rem;
+// used for tagline
+h3 {
+  margin-top: 0;
+  margin-bottom: 2em;
+  font-size: 1em;
   text-align: center;
+}
+
+h2 {
+  font-size: 1.25em;
+  margin-bottom: 0.4em;
+}
+
+@media (min-width: 30em) {
+  h2 {
+    font-size: 1.5em;
+  }
 }
 
 p, ul, ol, dl, table, pre, blockquote {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 ul, ol {
-  padding-left: 1.5rem;
+  padding-left: 1.5em;
 }
 
 dd {
-  margin-left: 1.5rem;
+  margin-left: 1.5em;
 }
 
 blockquote {
   margin-left: 0;
   margin-right: 0;
-  padding: .5rem 1rem;
-  border-left: .25rem solid #ccc;
+  padding: .5em 1em;
+  border-left: .25em solid #ccc;
   color: #666;
 }
 
@@ -97,7 +92,7 @@ blockquote p:last-child {
 
 hr {
   border: none;
-  margin: 1.5rem 0;
+  margin: 1.5em 0;
   border-bottom: 1px solid #ccc;
   position: relative;
   top: -1px;
@@ -119,7 +114,7 @@ table {
 }
 
 td, th {
-  padding: .25rem .5rem;
+  padding: .25em .5em;
   border: 1px solid #ccc;
 }
 
@@ -127,15 +122,15 @@ pre, code {
   font-family: 'Consolas', 'Menlo', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
   background-color: #feb;
   color: #544;
-  font-size: 0.95rem;
+  font-size: 0.95em;
 }
 
 pre {
-  padding: .5rem 1rem;
+  padding: .5em 1em;
 }
 
 code {
-  padding: .1rem .25rem;
+  padding: .1em .25em;
 }
 
 pre > code {
@@ -143,7 +138,7 @@ pre > code {
 }
 
 .container {
-  max-width: 38rem;
+  max-width: 38em;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1em;
 }

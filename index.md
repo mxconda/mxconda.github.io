@@ -6,8 +6,7 @@ layout: default
 
 ## Focus
 
-- the latest versions of rapidly developed programs - for easy testing
-  and quick feedback loop, and
+- the latest versions of rapidly developed programs - for quick feedback loop, and
 - open-source programs that otherwise may be hard to install
 
 ## MXconda is
@@ -22,8 +21,8 @@ layout: default
 - quick to downgrade: you may easily go back to the last release
   (`mx install coot==0.8.2`) or to older development snapshot
   (`mx search coot` shows all available versions)
-- designed to avoid conflicts when you have the same programs
-  installed also outside of mxconda
+- designed to avoid conflicts when the same programs are installed
+  also outside of mxconda
 - developer friendly and CI-server friendly (details [below](#libraries))
 
 ## Initial set of packages
@@ -69,14 +68,13 @@ The same script is used to start programs:
     mx coot
     mx pymol my.pdb
 
-And if you prefer to call the programs directly, just do:
+and called without arguments, it starts bash subshell with all programs
+in the PATH:
 
     mx
 
-to start a bash subshell with all the programs in the PATH.
-
 Alternatively, you could add `$HOME/mxconda/bin` to the PATH
-in a startup files. Although we do not encourage it -
+in a startup file. Although we do not encourage it -
 if the same programs are installed also outside of mxconda
 it is easy to get confused which version is run.
 
@@ -123,8 +121,8 @@ linking with libraries from MXconda, if you use the same C++ ABI:
 
 - OS X packages are built with `-stdlib=libstdc++` for compatibility with 10.6.
 
-It all works nicely on CI servers. For example,
-installing conda and using it to install mmdb, libccp4 and clipper libraries takes
+It all works nicely on CI servers. For example, installing conda and
+using it to install mmdb, libccp4 and clipper libraries takes
 [15s on Travis](https://travis-ci.org/ccp4/dimple/builds/111474656#L130).
 
 

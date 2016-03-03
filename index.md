@@ -40,7 +40,7 @@ layout: default
 ## Installation
 
 No need for sudo.
-Download and run [get.sh](https://mxconda.github.io/git.sh),
+Download and run [get.sh](https://mxconda.github.io/get.sh),
 or just:
 
     curl -fsS https://mxconda.github.io/get.sh | sh

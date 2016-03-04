@@ -39,8 +39,8 @@ fi
 case "$(uname -s).$(uname -m)" in
   Linux.x86_64) fn=Miniconda-latest-Linux-x86_64.sh;;
   Linux.i?86) fn=Miniconda-latest-Linux-x86.sh;;
-  Darwin.x86_64) fn=Miniconda-latest-MacOSX-x86_64.sh;;
-  *) die "Sorry, only Linux (x86 and x86_64) and OS X (x86_64) is supported.";;
+  Darwin.*) fn=Miniconda-latest-MacOSX-x86_64.sh;;
+  *) die "Sorry, only Linux (x86 and x86_64) and OS X 10.6+ is supported.";;
 esac
 
 # determine installation prefix

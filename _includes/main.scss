@@ -12,7 +12,8 @@ body {
 
 @media (min-width: 30em) {
   body {
-    margin-top: 4em;
+    margin-top: 3em;
+    background: #f0efe7;
   }
 }
 
@@ -138,7 +139,27 @@ pre > code {
 }
 
 .container {
+  background-color: #fff;
   max-width: 38em;
   margin: 0 auto;
-  padding: 0 1em;
+  padding: 0.5em;
 }
+
+@media (min-width: 30em) {
+  .container {
+    border: solid 1px #e3e1d9;
+    border-radius: 6px;
+    padding: 1.6em;
+  }
+}
+
+ul {
+  padding-left: 1.0em;
+}
+
+@media (min-width: 30em) {
+  ul {
+    padding-left: 1.2em;
+  }
+}
+

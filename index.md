@@ -4,10 +4,14 @@ layout: default
 
 ### complementary software collection for macromolecular crystallography
 
+
 ## Focus
 
-- the latest versions of rapidly developed programs - for quick feedback loop, and
+- the latest* versions of rapidly developed programs -
+  for quick feedback loop, and
 - open-source programs that otherwise may be hard to install
+
+(\* we aim to update it once a week -- Tuesday lunchtime GMT)
 
 ## MXconda is
 
@@ -24,17 +28,18 @@ layout: default
   outside of mxconda
 - developer friendly and CI-server friendly ([-> Libraries](#libraries))
 
-## Initial set of packages
+## Packages
 
- - coot (and also raster3d, probe and reduce)
- - pymol (open-source version)
- - *[in testing]* cctbx (big bundle that includes DIALS and Molprobity)
- - *[considered]* [mifit](https://github.com/mifit/mifit)
- - *[considered]* [d-star-trek](https://github.com/tlhrigaku/d-star-trek)
- - and all necessary dependencies
- - plus [all Anaconda packages](http://docs.continuum.io/anaconda/pkg-docs)
-   available when you need them
+- coot* (and also raster3d, probe and reduce)
+- cctbx* (big bundle that includes DIALS and Molprobity)
+- pymol (open-source version)
+- *[considered]* [mifit](https://github.com/mifit/mifit)
+- *[considered]* [d-star-trek](https://github.com/tlhrigaku/d-star-trek)
+- and all necessary dependencies
+- plus [all Anaconda packages](http://docs.continuum.io/anaconda/pkg-docs)
+  available when you need them
 
+(\* frequently updated)
 
 ## Installation
 
@@ -73,7 +78,7 @@ in the PATH:
     mx
 
 Alternatively, you could add `$HOME/mxconda/bin` to the PATH
-in a startup file. Although we do not encourage it -
+in a startup file. Although we do not encourage it --
 if the same programs are installed also outside of mxconda
 it is easy to get confused which version is run.
 

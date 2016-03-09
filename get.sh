@@ -53,13 +53,15 @@ $prefix
  - Press Ctrl-C to abort the installation
  - Or specify a different location below (no spaces in the path)
 
-[$prefix] >>> "
+>>> "
 read user_prefix
 [ -n "$user_prefix" ] && prefix="$user_prefix"
 
 # do the same checks as Miniconda - better to fail early
 [ -e "$prefix" ] && die "ERROR: File or directory already exists: $prefix"
 mkdir -p "$prefix" || die "ERROR: Could not create directory: $prefix"
+# it needs to be absolute when creating symlink
+prefix="$(cd "$prefix" && pwd)"
 rmdir "$prefix" || die "Failed to create and remove directory - as a test."
 
 # download Miniconda
@@ -68,7 +70,7 @@ url="https://repo.continuum.io/miniconda/$fn"
 echo "
 Downloading Miniconda from
 $url
-Do not continue installation if you do not agree to its license agreement:
+Do not continue unless you agree to Anaconda license agreement:
 http://docs.continuum.io/anaconda/eula
 " >&2
 $download $url >>"$mini" || die "Download failed."
@@ -111,14 +113,14 @@ ln -s $prefix/bin/mx /your/favourite/bin/"
 
 if [ -n "$bindir" ]; then
   echo -n "
- The last step: symlink $prefix/bin/mx
- from a directory that is in your PATH.
-
- - Press ENTER to confirm the directory for symlink
+ The last step: create symlink in a directory in your PATH pointing to:
+ $prefix/bin/mx
+ - Press ENTER to create symbolic link in:
+   $bindir
  - Press Ctrl-C to finish without symlink
  - Or specify a different directory below
 
-[$bindir] >>> "
+>>> "
   read user_bin
   [ -n "$user_bin" ] && bindir="$user_bin"
   echo "ln -s $prefix/bin/mx $bindir/" >&2

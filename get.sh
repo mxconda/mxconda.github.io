@@ -76,6 +76,7 @@ http://docs.continuum.io/anaconda/eula
 $download $url >>"$mini" || die "Download failed."
 
 # install Miniconda
+export CONDARC="$prefix/.condarc"
 echo "Installing $url ..." >&2
 bash "$mini" -b -p "$prefix" || die "Installation failed."
 $prefix/bin/conda config --add channels https://conda.anaconda.org/mx
@@ -84,7 +85,11 @@ rm -f "$mini" && mini=
 
 # nomkl is installed to avoid downloading 100+MB Intel MKL package
 echo "Installing initial packages..." >&2
-$prefix/bin/conda install nomkl mx -y || die "Failed."
+if ! $prefix/bin/conda install nomkl mx -y; then
+    echo "It may be intermittent server problem. Waiting 5s and retrying..."
+    sleep 5
+    $prefix/bin/conda install nomkl mx -y || die "Failed."
+fi
 
 # symlink
 if [ -w "$HOME/bin" ]; then
@@ -124,6 +129,9 @@ if [ -n "$bindir" ]; then
 >>> "
   read user_bin </dev/tty
   [ -n "$user_bin" ] && bindir="$user_bin"
+  if [ -h "$bindir/mx" ]; then
+      rm -f "$bindir/mx" || die "Cannot remove existing symlink: $bindir/mx"
+  fi
   echo "ln -s $prefix/bin/mx $bindir/" >&2
   ln -s $prefix/bin/mx $bindir/ || printf "$symlink_info"
 else

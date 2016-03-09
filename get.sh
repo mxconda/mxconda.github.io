@@ -45,16 +45,16 @@ esac
 
 # determine installation prefix
 prefix="$HOME/mxconda"
-echo -n "
-MXconda (based on Miniconda2) will now be installed into this location:
-$prefix
+echo -n -e "
+MXconda (based on Miniconda2) will now be installed into this location:\033[1m
+$prefix \033[0m
 
  - Press ENTER to confirm the location
  - Press Ctrl-C to abort the installation
  - Or specify a different location below (no spaces in the path)
 
 >>> "
-read user_prefix
+read user_prefix </dev/tty
 [ -n "$user_prefix" ] && prefix="$user_prefix"
 
 # do the same checks as Miniconda - better to fail early
@@ -112,16 +112,16 @@ The command for this is:
 ln -s $prefix/bin/mx /your/favourite/bin/"
 
 if [ -n "$bindir" ]; then
-  echo -n "
+  echo -n -e "
  The last step: create symlink in a directory in your PATH pointing to:
  $prefix/bin/mx
- - Press ENTER to create symbolic link in:
-   $bindir
+ - Press ENTER to create symbolic link in:\033[1m
+   $bindir \033[0m
  - Press Ctrl-C to finish without symlink
  - Or specify a different directory below
 
 >>> "
-  read user_bin
+  read user_bin </dev/tty
   [ -n "$user_bin" ] && bindir="$user_bin"
   echo "ln -s $prefix/bin/mx $bindir/" >&2
   ln -s $prefix/bin/mx $bindir/ || echo -e "$symlink_info"

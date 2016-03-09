@@ -45,7 +45,7 @@ esac
 
 # determine installation prefix
 prefix="$HOME/mxconda"
-echo -n -e "
+printf "
 MXconda (based on Miniconda2) will now be installed into this location:\033[1m
 $prefix \033[0m
 
@@ -109,10 +109,11 @@ symlink_info="
 You have everything installed, but to make the mx easily available\\033[1m
 you need to symlink it (not copy!) to one of directories in your PATH.\\033[0m
 The command for this is:
-ln -s $prefix/bin/mx /your/favourite/bin/"
+ln -s $prefix/bin/mx /your/favourite/bin/
+"
 
 if [ -n "$bindir" ]; then
-  echo -n -e "
+  printf "
  The last step: create symlink in a directory in your PATH pointing to:
  $prefix/bin/mx
  - Press ENTER to create symbolic link in:\033[1m
@@ -124,9 +125,9 @@ if [ -n "$bindir" ]; then
   read user_bin </dev/tty
   [ -n "$user_bin" ] && bindir="$user_bin"
   echo "ln -s $prefix/bin/mx $bindir/" >&2
-  ln -s $prefix/bin/mx $bindir/ || echo -e "$symlink_info"
+  ln -s $prefix/bin/mx $bindir/ || printf "$symlink_info"
 else
-  echo -e "$symlink_info"
+  printf "$symlink_info"
 fi
 
 echo "

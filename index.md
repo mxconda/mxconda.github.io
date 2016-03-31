@@ -2,7 +2,9 @@
 layout: default
 ---
 
-### complementary software collection for macromolecular crystallography
+# MXconda
+
+#### complementary software collection for macromolecular crystallography
 
 
 ## Focus
